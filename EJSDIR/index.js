@@ -16,5 +16,6 @@ app.listen(port, () =>{
 });
 
 app.get("/rolldice", (req,res) =>{
-    res.render("rolldice.ejs");
+    let diceVal = Math.floor(Math.random()*6)+1; //incase value coming from a database
+    res.render("rolldice.ejs",{num: diceVal}); //database value has been assigned to a key 'num'
 });
