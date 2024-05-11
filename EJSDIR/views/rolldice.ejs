@@ -7,5 +7,10 @@
 </head>
 <body>
     <h1>Dice give value : <%= num %></h1>
+    <!--adding conditional javascript codes in ejs-->
+    <% if(num == 6) {%>
+    <h2>Nice! Roll dice again.</h2>
+    <% } %>
 </body>
 </html>
+
