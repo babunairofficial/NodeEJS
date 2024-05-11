@@ -9,8 +9,12 @@ app.set("views", path.join(__dirname, "/views")) // informs the server to search
 
 app.get("/", (req,res) =>{
     res.render("home.ejs");
-})
+});
 
 app.listen(port, () =>{
     console.log(`listening on port ${port}`);
+});
+
+app.get("/rolldice", (req,res) =>{
+    res.render("rolldice.ejs");
 });
