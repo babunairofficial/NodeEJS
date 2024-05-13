@@ -11,10 +11,18 @@ app.get("/", (req,res) =>{
     res.render("home.ejs");
 });
 
-app.get("/ig/:username", (req,res) =>{
-    const followers = ["sachin", "saurav", "virender", "rahul"];
+// app.get("/ig/:username", (req,res) =>{
+//     const followers = ["sachin", "saurav", "virender", "rahul"];
+//     let {username} = req.params;
+//    res.render("instagram.ejs",{username, followers});
+// });
+
+app.get("/ig/:username", (req, res) =>{
     let {username} = req.params;
-   res.render("instagram.ejs",{username, followers});
+    const instaData = require("./data.json");
+    const data = instaData[username];
+    console.log(data);
+   res.render("instagram.ejs", {data});
 });
 
 app.listen(port, () =>{
