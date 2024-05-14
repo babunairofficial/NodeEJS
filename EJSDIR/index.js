@@ -4,6 +4,8 @@ const path = require("path");
 
 const port = 8080;
 
+app.use(express.static("public")); //a default
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views")) // informs the server to search the views folder in the correct directory
 
